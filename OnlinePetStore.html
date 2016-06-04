@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<title>Minimum Bootstrap HTML Skeleton</title>
+
+	<!--  -->
+
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+
+	<div class="container">    
+        <div class="content"></div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<script>
+        
+        
+        //MODEL
+        var model = model(){
+            //USER
+            //This is a function that creates a user object
+            //User object will contain fname,lname, email, age, dog or cat person
+        
+        var user = []
+        
+        
+        var cartCount = cartItemCounter()
+        var cartSubTotal = cartSubTotalCounter()
+        var cartTotal = cartTotalCounter()
+    
+            //PRODUCTS
+            //Array of Arrays
+            //Each product will contain:
+            //Name, ID, Desc, Price, Image
+        var products = [
+            [1,'pname','pdesc','pprice','images/imagename.png']
+            [2,'pname','pdesc','pprice','images/imagename.png']
+            [3,'pname','pdesc','pprice','images/imagename.png']
+            [4,'pname','pdesc','pprice','images/imagename.png']
+            [5,'pname','pdesc','pprice','images/imagename.png']
+            [6,'pname','pdesc','pprice','images/imagename.png']
+        ]
+        }
+        
+        
+        
+        function buildProduct(products){
+            var content="";
+            for(i=0; i<=product.length; i++){
+                
+                var productID= product[i][0];
+                var productDescription= product[i][1];
+                var productName= product[i][2];
+                var productPrice= product[i][3];
+                var productImage= product[i][4];   
+             
+                content+='<div class="col-md-4">';
+                content+='<img src="'+productImage+''" class="img-responsive">';
+                content+='<div class="producttitle">'+productName+'</div>';
+                content+='<div class="productprice">';
+                content+='<div class="pull-right">';
+                content+='<a href="#" class="btn btn-danger btn-sm" role="button" onclick="addToCart('+productID+')">ADD</a></div>';
+                content+='<input id="'+productID+'" type="number" name="quantity" min="1" max="10">'
+                content+='<div class="pricetext">$8.95</div>';
+                content+='</div>';
+                content+='<hr/>';
+                content+='</div>';
+            
+            
+            }
+            return content
+           
+        } 
+        
+        
+        
+        //VIEW
+        var view = view(){}
+        //What to show.....
+        var registration = showRegistration(){    
+            //START
+            //REGISTRATION MODAL (maybe make this a page to start?)
+                //        <!-- Trigger the modal with a initial IF statement (checking local storage for user true)-->
+                //<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+                //
+                //<!-- Modal -->
+                //<div id="myModal" class="modal fade" role="dialog">
+                //  <div class="modal-dialog">
+                //
+                //    <!-- Modal content-->
+                //    <div class="modal-content">
+                //      <div class="modal-header">
+                //        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                //        <h4 class="modal-title">Modal Header</h4>
+                //      </div>
+                //      <div class="modal-body">
+                //        <p>Some text in the modal.</p>
+                //      </div>
+                //      <div class="modal-footer">
+                //        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                //      </div>
+                //    </div>
+                //
+                //  </div>
+                //</div>
+                //        
+        
+        
+            //This is a non-escapable modale window that shows IF user object (string) is not detected in local storage
+        
+                //        <!-- Signup Form  -->
+                //        <div class="col-md-4">
+                //            <label>First Name</label>
+                //            <input type="text" id="firstName" class="form-control" />
+                //            <label>Last Name</label>
+                //            <input type="text" id="lastName" class="form-control" />
+                //            <label>Email</label>
+                //            <input type="text" id="email" class="form-control" />
+                //            <label>Age</label>
+                //            <input type="text" id="age" class="form-control" />
+                //            <label>Favorite Product Type</label>
+                //            <select id="favoriteProduct" class="form-control">
+                //                <option value="cameras" id="">Cameras</option>
+                //                <option value="clothing" id="">Clothing</option>
+                //                <option value="games" id="">Games</option>
+                //            </select>
+                //            <hr/>
+                //            <a href="cart.html" class="btn btn-success" onclick="saveForm()">Register</a>
+                //            <br/>
+                //            <hr/>
+                //        </div>
+
+        
+            
+            document.getElementById("Content")innerHTML = "form"
+        }
+        
+            //PRODUCTS PAGE
+            //MAKE NAV
+            //MAKE PRODUCT LIST
+        
+        
+            //MAKE CART (DRAWER)
+            //Fixed drawer right
+//                    <div class="bmd-layout-container bmd-drawer-f-r">
+//                <header class="bmd-layout-header">
+//                    <div class="navbar navbar-light bg-faded">
+//                        <button class="navbar-toggler" type="button" data-toggle="drawer" data-target="#dw-s1">
+//                            <span class="sr-only hidden">Toggle drawer</span>
+//                            <i class="material-icons">menu</i>
+//                        </button>
+//                        <ul class="nav navbar-nav">
+//                            <li class="nav-item">Title</li>
+//                        </ul>
+//                    </div>
+//                </header>
+//                <div id="dw-s1" class="bmd-layout-drawer bg-faded">
+//                    <header>
+//                        <a class="navbar-brand">Title</a>
+//                    </header>
+//                    <ul class="list-group">
+//                        <a class="list-group-item">Link 1</a>
+//                        <a class="list-group-item">Link 2</a>
+//                        <a class="list-group-item">Link 3</a>
+//                    </ul>
+//                </div>
+//                <main class="bmd-layout-content">
+//                    <div class="container">
+//                        <p>Main content</p>
+//                    </div>
+//                </main>
+//            </div>
+            //MAKE BINS FOR CART ITEMS
+        
+        
+        
+        //CONTROLLER
+        var controller = contoller(){
+            //CHECK LOCAL STORAGE
+            //This is a function that checks local storage for a variable
+
+            
+           
+            //check if user exists
+            if (localStorage.getItem("user") === null){
+            
+            //Get user from localstorage
+            localStorage.getItem("firstname", fname);
+            localStorage.getItem("lastname", lname);
+            localStorage.getItem("email", em);
+            localStorage.getItem("age", age);
+            localStorage.getItem("cartcreated", 1);
+            localStorage.getItem("firstsetdate", date);     
+            }
+            
+            //If user doesn't exist, show registration and get inputs (upon submission)
+            else{
+            
+            showRegistration()
+            
+            function saveForm() {
+            //Get form values
+            var fname = document.getElementById('firstName').value;
+            var lname = document.getElementById('lastName').value;
+            var em = document.getElementById('email').value;
+            var age = document.getElementById('age').value;
+            
+                
+            //STORE USER INPUTS IN LOCAL STORAGE
+            localStorage.setItem("firstname", fname);
+            localStorage.setItem("lastname", lname);
+            localStorage.setItem("email", em);
+            localStorage.setItem("age", age);
+            localStorage.setItem("cartcreated", 1);
+            localStorage.setItem("firstsetdate", date);    
+            }
+            }
+            //PRODUCT (PUPPY) FACTORY
+            //This is a function that builds products/puppies from array information
+            for 
+                
+        
+        
+	</script>
+
+</body>
+
+</html>
